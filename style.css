@@ -1,3 +1,10 @@
+#logo-bg-area {
+background: url('https://cognitio-plus.aiwaapp.live/cache/media_cache/df669b73c1d4fffa2a3ea23998336a3d.png') no-repeat center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 body {
   font-family: 'Roboto Condensed', sans-serif;
   background: #f4f8fb;
