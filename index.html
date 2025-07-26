@@ -2,32 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Cognitio+ Login</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="manifest" href="/manifest.json"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- JS -->
   <script defer src="script.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Montserrat:w
+
+  <!-- Privacy -->
+  <p class="privacy policy">
+  By continuing, you agree to our <a href="https://cognitio-plus.aiwaapp.live/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy.</a>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'
 </head>
+
 <body>
-    <div id="logo-bg-area">
-</div>
-  <!-- login form here -->
+  body {
+  background-image: url('https://cognitio-plus.aiwaapp.live/cache/media_cache/df669b73c1d4fffa2a3ea23998336a3d.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+}
+  <div id="logo-bg-area" role="presentation" aria-hidden="true"></div>
+
   <main class="login-container" role="main" aria-label="Login Page">
     <section class="login-box" aria-labelledby="login-heading">
-      <h1 id="login-heading">Login to your Cognitio+ Account</h1>
-      <form id="loginup-form" aria-describedby="form-desc" novalidate>
-        <p id="form-desc" class="form-desc">Please fill in the form below to access your private Cognitio+ portal.</p>
-        
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required aria-required="true" placeholder="you@example.com" />
+      <h1 id="login-heading" tabindex="0">Login to your Cognitio+ Account</h1>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required minlength="8" aria-required="true" placeholder="Minimum 8 characters" />
-        <button type="submit" class="submit-btn" aria-label="Login to Cognitio+">Login</button>
+      <form id="loginup-form" aria-describedby="form-desc" novalidate autocomplete="on">
+      <p id="form-desc" class="form-desc">Please fill in the form below to securely access your private Cognitio+ portal.</p>
 
-        <p class="form-note">No account yet? Create an account. <a href="/signup" target="_blank">Signup</a>
+        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          inputmode="email"
+          required
+          aria-required="true"
+          placeholder="you@example.com"
+          autocomplete="email"
+        />
+
+        <label for="password">Password <span aria-hidden="true">*</span></label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          minlength="8"
+          required
+          aria-required="true"
+          placeholder="Minimum 8 characters"
+          autocomplete="current-password"
+        />
+
+        <button
+          type="submit"
+          class="submit-btn"
+          aria-label="Login to Cognitio+"
+        >
+          Login
+        </button>
+
+        <p class="form-note">
+          No account yet?
+          <a href="/signup" target="_blank" rel="noopener noreferrer">Create one here</a>.
+        </p>
       </form>
     </section>
   </main>
