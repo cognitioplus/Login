@@ -1,4 +1,5 @@
-#logo-bg-area::before {
+}
+:before {
   content: '';
   background: url('https://cognitio-plus.aiwaapp.live/cache/media_cache/df669b73c1d4fffa2a3ea23998336a3d.png') no-repeat center center;
   background-size: cover;
@@ -10,7 +11,7 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background: #f4f8fb;
+  background: #9b0ea4;
   margin: 0;
   padding: 0;
   color: #000;
@@ -55,7 +56,7 @@ input {
 }
 
 button {
-  background-color: #0A74DA;
+  background-color: #b425aa;
   color: white;
   padding: 10px;
   border: none;
