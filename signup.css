@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background: #f4f8fb;
+  background: #f3e329;
   margin: 0;
   padding: 0;
   color: #000;
@@ -63,7 +63,7 @@ input:focus {
 .submit-btn {
   margin-top: 1.5rem;
   width: 100%;
-  background-color: #0c910b;
+  background-color: #b425aa;
   color: white;
   border: none;
   padding: 0.85rem;
