@@ -1,8 +1,11 @@
-#logo-bg-area {
-background: url('https://cognitio-plus.aiwaapp.live/cache/media_cache/df669b73c1d4fffa2a3ea23998336a3d.png') no-repeat center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+#logo-bg-area::before {
+  content: '';
+  background: url('https://cognitio-plus.aiwaapp.live/cache/media_cache/df669b73c1d4fffa2a3ea23998336a3d.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.1;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
 }
 
 body {
