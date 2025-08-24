@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - Cognitio+</title>
+  <style>
+    :root {
+      --cognitio-primary: #4a6cf7;
+      --cognitio-secondary: #6c757d;
+      --cognitio-dark: #212529;
+      --cognitio-light: #f8f9fa;
+      --cognitio-gray: #6c757d;
+      --border-radius: 8px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fb;
+      color: var(--cognitio-dark);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .profile-card {
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .profile-header {
+      background: var(--cognitio-primary);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .profile-body {
+      padding: 2rem;
+      text-align: center;
+    }
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: -60px auto 1rem;
+      display: block;
+      background: #e9ecef;
+      line-height: 120px;
+      color: #6c757d;
+      font-size: 48px;
+    }
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.8rem;
+      color: var(--cognitio-dark);
+    }
+    .profile-email {
+      color: var(--cognitio-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--cognitio-light);
+      color: var(--cognitio-gray);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid #e9ecef;
+    }
+    .footer {
+      margin-top: 2rem;
+      color: var(--cognitio-secondary);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="profile-header">
+      <h2>Your Profile</h2>
+    </div>
+    <div class="profile-body">
+      <img src="https://static.airtable.com/images/userIcons/user_icon_5.png" alt="Profile Photo" class="profile-photo" />
+      <h1>Public</h1>
+      <p class="profile-email">guest@airtable.com</p>
+      <span class="badge">Guest User</span>
+      <div class="footer">
+        <p>Member since: January 1, 2020</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
