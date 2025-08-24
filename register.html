@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Cognitio+</title>
+  <meta name="description" content="Create a new Cognitio+ account to begin your resilience journey." />
+  <meta name="author" content="Cognitio+" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://yourdomain.com/register.html" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#c80ec9" />
+  <meta property="og:title" content="Register | Cognitio+" />
+  <meta property="og:description" content="Start your wellness journey today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/register.html" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Register</h1>
+    <form id="register-form">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="name" placeholder="Enter your first name" required />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Create a password" required />
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" name="c_password" placeholder="Confirm your password" required />
+      </div>
+      <button type="submit">Register</button>
+      <p class="resp-message"></p>
+      <a href="login.html">Already have an account? Login</a>
+    </form>
+  </div>
+  <button id="theme-toggle">🌙</button>
+  <script src="js/auth.js"></script>
+</body>
+</html>
