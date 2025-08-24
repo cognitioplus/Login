@@ -10,40 +10,115 @@
   <link rel="canonical" href="https://cognitio-plus.appimize.app/register.html" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#c80ec9" />
+
+  <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Register | Cognitio+" />
   <meta property="og:description" content="Start your wellness journey today." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cognitio-plus.appimize.app/register.html" />
+  <meta property="og:image" content="https://cognitio-plus.appimize.app/assets/og-register.jpg" />
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/logo.png" type="image/png" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Register</h1>
+    <h1>Create Your Account</h1>
     <form id="register-form">
       <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Enter your first and last name" required />
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your first and last name" required />
       </div>
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Enter your email" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
       </div>
       <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Create a password" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required />
       </div>
       <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" name="c_password" placeholder="Confirm your password" required />
+        <label for="c_password">Confirm Password</label>
+        <input type="password" id="c_password" name="c_password" placeholder="Confirm your password" required />
       </div>
       <button type="submit">Register</button>
-      <p class="resp-message"></p>
-      <a href="login.html">Already have an account? Login</a>
+      <p class="resp-message" id="message"></p>
+      <div class="links">
+        <a href="login.html">Already have an account? Login</a>
+      </div>
     </form>
   </div>
+
+  <!-- Theme Toggle -->
   <button id="theme-toggle">🌙</button>
-  <script src="auth.js"></script>
+
+  <!-- Script -->
+  <script>
+    document.getElementById('register-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const cPassword = document.getElementById('c_password').value;
+      const messageEl = document.getElementById('message');
+
+      // Reset message
+      messageEl.textContent = '';
+      messageEl.style.color = 'red';
+
+      // Validation
+      if (!name || !email || !password || !cPassword) {
+        messageEl.textContent = 'All fields are required.';
+        return;
+      }
+
+      if (password !== cPassword) {
+        messageEl.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      if (password.length < 6) {
+        messageEl.textContent = 'Password must be at least 6 characters.';
+        return;
+      }
+
+      // Simulate registration success (replace with real API call)
+      // fetch('/api/register', { method: 'POST', body: JSON.stringify({ name, email, password }) })
+
+      messageEl.style.color = 'green';
+      messageEl.textContent = 'Registration successful! Redirecting...';
+
+      // Redirect after success
+      setTimeout(() => {
+        window.location.href = 'user-profile.html';
+      }, 800);
+    });
+
+    // Theme Toggle Logic
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+
+    const isDarkMode = localStorage.getItem('dark-mode') !== 'false';
+    if (isDarkMode) {
+      html.classList.add('dark-mode');
+      themeToggle.textContent = '☀️';
+    } else {
+      html.classList.remove('dark-mode');
+      themeToggle.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isCurrentlyDark = html.classList.toggle('dark-mode');
+      localStorage.setItem('dark-mode', isCurrentlyDark);
+      themeToggle.textContent = isCurrentlyDark ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
