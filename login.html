@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Cognitio+</title>
+  <meta name="description" content="Log in to your Cognitio+ account to access resilience and wellness tools." />
+  <meta name="author" content="Cognitio+" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://cognitio-plus.com/login.html" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#c80ec9" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Login | Cognitio+" />
+  <meta property="og:description" content="Access your emotional wellness toolkit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitio-plus.com/login.html" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://appimize.app/assets/apps/user_1097/images/b2e254093bca_935_1097.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required />
+      </div>
+      <button type="submit">Login</button>
+      <p class="resp-message"></p>
+      <a href="register.html">Don't have an account? Register</a>
+      <a href="#">Forgot Password?</a>
+    </form>
+  </div>
+  <button id="theme-toggle">🌙</button>
+  <script src="js/auth.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
