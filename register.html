@@ -1,124 +1,284 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-mode">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register | Cognitio+</title>
-  <meta name="description" content="Create a new Cognitio+ account to begin your resilience journey." />
+  <meta name="description" content="Create a new Cognitio+ account to begin your resilience and wellness journey." />
   <meta name="author" content="Cognitio+" />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href="https://cognitio-plus.appimize.app/register.html" />
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#c80ec9" />
+  <link rel="canonical" href="https://cognitioplus.aiwapp.live/register/" />
+  <meta name="theme-color" content="#000000" />
 
-  <!-- Open Graph / Social Media -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Register | Cognitio+" />
-  <meta property="og:description" content="Start your wellness journey today." />
+  <meta property="og:description" content="Join Cognitio+ and start your resilience journey." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cognitio-plus.appimize.app/register.html" />
-  <meta property="og:image" content="https://cognitio-plus.appimize.app/assets/og-register.jpg" />
+  <meta property="og:url" content="https://cognitioplus.aiwapp.live/register/" />
+  <meta property="og:image" content="https://cognitioplus.aiwapp.live/assets/og-register.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="assets/logo.png" type="image/png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #000000;
+      --input-bg: #f9f9f9;
+      --border-color: #ddd;
+      --hover-bg: #f2f2f2;
+    }
+
+    .dark-mode {
+      --bg-color: #000000;
+      --text-color: #ffffff;
+      --input-bg: #1a1a1a;
+      --border-color: #333;
+      --hover-bg: #111;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      background-color: var(--input-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-size: 1rem;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 0.8;
+    }
+
+    .social-login {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 0.6rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .social-btn:hover {
+      background-color: var(--hover-bg);
+    }
+
+    .social-btn img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+
+    .resp-message {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
-    <h1>Create Your Account</h1>
+    <h1>Create Account</h1>
     <form id="register-form">
       <div class="form-group">
         <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your first and last name" required />
+        <input type="text" id="name" placeholder="Enter your full name" required />
       </div>
+
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <input type="email" id="email" placeholder="Enter your email" required />
       </div>
+
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Create a password" required />
+        <input type="password" id="password" placeholder="Create a password" required />
       </div>
+
       <div class="form-group">
-        <label for="c_password">Confirm Password</label>
-        <input type="password" id="c_password" name="c_password" placeholder="Confirm your password" required />
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm your password" required />
       </div>
+
       <button type="submit">Register</button>
       <p class="resp-message" id="message"></p>
+
+      <div class="social-login">
+        <a href="/auth/google" class="social-btn" id="google-register">
+          <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Icon" />
+          Sign up with Google
+        </a>
+      </div>
+
       <div class="links">
         <a href="login.html">Already have an account? Login</a>
       </div>
     </form>
   </div>
 
-  <!-- Theme Toggle -->
   <button id="theme-toggle">🌙</button>
 
-  <!-- Script -->
   <script>
+    // Registration form validation + redirect
     document.getElementById('register-form').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value;
-      const cPassword = document.getElementById('c_password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
       const messageEl = document.getElementById('message');
 
-      // Reset message
       messageEl.textContent = '';
       messageEl.style.color = 'red';
 
-      // Validation
-      if (!name || !email || !password || !cPassword) {
+      if (!name || !email || !password || !confirmPassword) {
         messageEl.textContent = 'All fields are required.';
         return;
       }
 
-      if (password !== cPassword) {
+      if (password !== confirmPassword) {
         messageEl.textContent = 'Passwords do not match.';
         return;
       }
 
       if (password.length < 6) {
-        messageEl.textContent = 'Password must be at least 6 characters.';
+        messageEl.textContent = 'Password must be at least 6 characters long.';
         return;
       }
-
-      // Simulate registration success (replace with real API call)
-      // fetch('/api/register', { method: 'POST', body: JSON.stringify({ name, email, password }) })
 
       messageEl.style.color = 'green';
       messageEl.textContent = 'Registration successful! Redirecting...';
 
-      // Redirect after success
+      // Simulate redirect
       setTimeout(() => {
-        window.location.href = 'user-profile.html';
-      }, 800);
+        window.location.href = 'profile-settings.html';
+      }, 1000);
     });
 
-    // Theme Toggle Logic
+    // Google OAuth setup
+    const googleRegister = document.getElementById('google-register');
+    googleRegister.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=565495991833-s75g0hn0fu1rrs2up7q3m76ci0l9dp87.apps.googleusercontent.com&redirect_uri=https://plwpdbnonowbysxrhjow.supabase.co/auth/v1/callback&response_type=code&scope=profile email`;
+
+    // Theme toggle logic
     const html = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
+    const isDarkMode = localStorage.getItem('dark-mode') === 'true';
 
-    const isDarkMode = localStorage.getItem('dark-mode') !== 'false';
     if (isDarkMode) {
       html.classList.add('dark-mode');
       themeToggle.textContent = '☀️';
-    } else {
-      html.classList.remove('dark-mode');
-      themeToggle.textContent = '🌙';
     }
 
     themeToggle.addEventListener('click', () => {
-      const isCurrentlyDark = html.classList.toggle('dark-mode');
-      localStorage.setItem('dark-mode', isCurrentlyDark);
-      themeToggle.textContent = isCurrentlyDark ? '☀️' : '🌙';
+      const dark = html.classList.toggle('dark-mode');
+      localStorage.setItem('dark-mode', dark);
+      themeToggle.textContent = dark ? '☀️' : '🌙';
     });
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').catch(err => {
+        console.warn('Service worker registration failed:', err);
+      });
+    }
   </script>
 </body>
 </html>
