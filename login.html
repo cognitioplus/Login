@@ -1,63 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" class="dark-mode">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login | Cognitio+</title>
-  <meta name="description" content="Log in to your Cognitio+ account to access resilience and wellness tools." />
+  <meta name="description" content="Log in to your Cognitio+ account to access your wellness and resilience tools." />
   <meta name="author" content="Cognitio+" />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="canonical" href="https://cognitio-plus.com/login.html" />
-  <meta name="theme-color" content="#c80ec9" />
+  <link rel="canonical" href="https://cognitioplus.aiwapp.live/login/" />
+  <meta name="theme-color" content="#000000" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Login | Cognitio+" />
-  <meta property="og:description" content="Access your emotional wellness toolkit." />
+  <meta property="og:description" content="Access your Cognitio+ account securely." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cognitio-plus.com/login.html" />
-  <meta property="og:image" content="https://cognitio-plus.com/assets/og-login.jpg" />
+  <meta property="og:url" content="https://cognitioplus.aiwapp.live/login/" />
+  <meta property="og:image" content="https://cognitioplus.aiwapp.live/assets/og-login.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="assets/logo.png" type="image/png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --accent-color: #000000;
+      --input-bg: #f9f9f9;
+      --border-color: #ddd;
+      --hover-bg: #f2f2f2;
+    }
+
+    .dark-mode {
+      --bg-color: #000000;
+      --text-color: #ffffff;
+      --input-bg: #1a1a1a;
+      --border-color: #333;
+      --hover-bg: #111;
+    }
+
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Inter', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background-color: var(--bg-color, #f7f7f7);
-      color: var(--text-color, #222);
+      background-color: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .dark-mode body {
-      --bg-color: #121212;
-      --text-color: #eee;
-    }
-
     .container {
-      background-color: #fff;
+      background-color: var(--input-bg);
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
       padding: 2rem;
       width: 100%;
-      max-width: 400px;
+      max-width: 380px;
       text-align: center;
     }
 
     h1 {
-      margin-bottom: 1rem;
-      color: #c80ec9;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
     }
 
     .form-group {
@@ -74,26 +83,28 @@
     input {
       width: 100%;
       padding: 0.75rem;
-      border: 1px solid #ccc;
+      border: 1px solid var(--border-color);
       border-radius: 6px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-size: 1rem;
     }
 
     button[type="submit"] {
       width: 100%;
-      background-color: #c80ec9;
-      color: white;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
       border: none;
-      padding: 0.75rem;
+      padding: 0.8rem;
       border-radius: 6px;
       cursor: pointer;
       font-size: 1rem;
       font-weight: 500;
-      transition: background-color 0.3s;
+      transition: opacity 0.3s;
     }
 
     button[type="submit"]:hover {
-      background-color: #a30aa6;
+      opacity: 0.8;
     }
 
     .social-login {
@@ -108,18 +119,18 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      border: 1px solid #ccc;
+      border: 1px solid var(--border-color);
       border-radius: 6px;
       padding: 0.6rem;
       cursor: pointer;
       text-decoration: none;
-      color: #222;
+      color: var(--text-color);
       font-weight: 500;
       transition: background-color 0.3s;
     }
 
     .social-btn:hover {
-      background-color: #f5f5f5;
+      background-color: var(--hover-bg);
     }
 
     .social-btn img {
@@ -128,14 +139,14 @@
     }
 
     .links {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       display: flex;
       justify-content: space-between;
       font-size: 0.9rem;
     }
 
     .links a {
-      color: #c80ec9;
+      color: var(--text-color);
       text-decoration: none;
     }
 
@@ -149,42 +160,41 @@
       right: 20px;
       background: none;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       cursor: pointer;
+      color: var(--text-color);
     }
 
     .resp-message {
       margin-top: 0.5rem;
       font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>Welcome Back</h1>
+    <h1>Sign In</h1>
+
     <form id="login-form">
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <input type="email" id="email" placeholder="Enter your email" required />
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+        <input type="password" id="password" placeholder="Enter your password" required />
       </div>
 
       <button type="submit">Login</button>
       <p class="resp-message" id="message"></p>
 
       <div class="social-login">
-        <a href="/auth/google" class="social-btn">
-          <img src="https://www.svgrepo.com/show/353817/google-icon.svg" alt="Google Icon" />
+        <a href="/auth/google" class="social-btn" id="google-login">
+          <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Icon" />
           Continue with Google
-        </a>
-        <a href="/auth/facebook" class="social-btn">
-          <img src="https://www.svgrepo.com/show/183607/facebook.svg" alt="Facebook Icon" />
-          Continue with Facebook
         </a>
       </div>
 
@@ -198,13 +208,13 @@
   <!-- Theme Toggle -->
   <button id="theme-toggle">🌙</button>
 
-  <!-- Scripts -->
   <script>
     // Handle login form submission
     document.getElementById('login-form').addEventListener('submit', function (e) {
       e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
       const messageEl = document.getElementById('message');
 
       if (!email || !password) {
@@ -216,33 +226,36 @@
       messageEl.textContent = 'Logging in...';
       messageEl.style.color = 'gray';
 
-      // Simulate login request
+      // Simulated authentication
       setTimeout(() => {
-        window.location.href = 'user-profile.html';
+        window.location.href = 'profile-settings.html'; // ✅ Redirect to Profile Settings
       }, 800);
     });
 
-    // Theme Toggle Logic
+    // Google OAuth login
+    const googleLogin = document.getElementById('google-login');
+    googleLogin.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=565495991833-s75g0hn0fu1rrs2up7q3m76ci0l9dp87.apps.googleusercontent.com&redirect_uri=https://plwpdbnonowbysxrhjow.supabase.co/auth/v1/callback&response_type=code&scope=profile email`;
+
+    // Theme Toggle
     const html = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
-    const isDarkMode = localStorage.getItem('dark-mode') !== 'false';
+    const isDarkMode = localStorage.getItem('dark-mode') === 'true';
+
     if (isDarkMode) {
       html.classList.add('dark-mode');
       themeToggle.textContent = '☀️';
-    } else {
-      html.classList.remove('dark-mode');
-      themeToggle.textContent = '🌙';
     }
+
     themeToggle.addEventListener('click', () => {
-      const isDark = html.classList.toggle('dark-mode');
-      localStorage.setItem('dark-mode', isDark);
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      const dark = html.classList.toggle('dark-mode');
+      localStorage.setItem('dark-mode', dark);
+      themeToggle.textContent = dark ? '☀️' : '🌙';
     });
 
     // Register Service Worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js').catch(err => {
-        console.warn('Service worker registration failed:', err);
+        console.warn('Service Worker registration failed:', err);
       });
     }
   </script>
